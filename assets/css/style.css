@@ -39,7 +39,7 @@ header {
 #main-content {
 	position: relative;
 	padding-top: 130px;
-	margin-bottom: 40px;
+	margin-bottom: 60px;
 }
 
 #content {
@@ -88,7 +88,7 @@ p {
 }
 
 footer {
-	position: fixed;
+	position: relative;
 	z-index: 5;
 	width: 100%;
 	background: #666666;
@@ -112,10 +112,10 @@ html, body {
 }
 .wrapper {
 	min-height: 100%;
-	margin: 0 auto -148px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto -108px; /* the bottom margin is the negative value of the footer's height */
 }
 footer, .push {
-	height: 148px; /* '.push' must be the same height as 'footer' */
+	height: 108px; /* '.push' must be the same height as 'footer' */
 }
 
 /* Navigation menu */
@@ -164,22 +164,16 @@ nav a:active {
 
 /* Project page */
 
-.left {
-	float: left;
-	margin-right: 10px;
-}
-
-.right {
-	float: right;
-	margin-left: 10px;
-}
-
 .project {
 	width: 280px;
 	height: 200px;
 	position: relative;
-	margin-bottom: 40px;
+	margin: 20px 0 20px;
 	display: inline-block;
+}
+
+.project:nth-of-type(odd) {
+	margin-right: 40px;
 }
 
 .project-title {
@@ -259,16 +253,97 @@ button {
 
 /* Responsive CSS */
 
-@media screen (max-width:980px;) {
-	.header {
-		width: 730px;
-	}
-
-	.wrapper {
+@media screen and (max-width:980px) {
+	.container {
 		width: 730px;
 	}
 
 	#content {
 		width: 420px;
+	}
+
+	.project {
+		float: none;
+		margin: 20px 50px 30px;
+	}
+}
+
+@media screen and (max-width:768px) {
+	.container {
+		width: 728px;
+	}
+
+	#content {
+		float: none;
+		width: 728px;
+		margin-bottom: 40px;
+		overflow: auto;
+	}
+
+	#sidebar {
+		float: none;
+		width: 728px;
+	}
+
+	.project {
+		float: none;
+		margin: 20px 50px 30px;
+	}
+}
+
+@media screen and (max-width:640px) {
+	header {
+		position: static;
+	}
+
+	.container {
+		width: 100%;
+	}
+
+	#logo {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+
+	nav {
+		float: none;
+		width: 100%;
+		margin-top: 0;
+		padding: 20px;
+		text-align: center;
+	}
+
+	ul {
+		margin-top: 0;
+		padding: 0;
+	}
+
+	#main-content {
+		padding-top: 40px;
+	}
+
+	#content {
+		float: none;
+		width: 600px;
+		margin: 0 auto 40px;
+	}
+
+	#sidebar {
+		float: none;
+		width: 600px;
+		margin: 0 auto;
+	}
+
+	nav a:link {
+		font-size: 14px;
+		text-decoration: none;
+		color: #777777;
+		padding: 20px;
+	}
+
+	.project {
+		float: none;
+		margin: 20px 150px 30px;
 	}
 }
